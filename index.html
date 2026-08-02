@@ -1,471 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>DangerCat | $DCAT</title>
 
-<style>
+<meta name="description" content="Bad Cat. Good Coin.">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+<link rel="stylesheet" href="style.css">
 
-html{
-    scroll-behavior:smooth;
-}
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-body{
-    background:#080808;
-    color:#fff;
-    font-family:Arial, Helvetica, sans-serif;
-}
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-/* HEADER */
-
-header{
-    width:100%;
-    height:80px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:0 7%;
-
-    border-bottom:1px solid #222;
-
-    position:sticky;
-    top:0;
-
-    background:rgba(8,8,8,.95);
-
-    z-index:100;
-}
-
-.brand{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.brand img{
-    width:45px;
-    height:45px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-}
-
-.brand span{
-    font-weight:900;
-    letter-spacing:1px;
-    font-size:20px;
-}
-
-nav{
-    display:flex;
-    gap:30px;
-
-    font-size:14px;
-    font-weight:700;
-}
-
-nav a{
-    opacity:.7;
-    transition:.2s;
-}
-
-nav a:hover{
-    opacity:1;
-    color:#f5c518;
-}
-
-
-/* HERO */
-
-.hero{
-    min-height:80vh;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:80px 9%;
-
-    gap:60px;
-}
-
-.hero-text{
-    max-width:650px;
-}
-
-.hero h1{
-    font-size:clamp(55px,10vw,125px);
-
-    font-weight:1000;
-
-    letter-spacing:-6px;
-
-    line-height:.9;
-}
-
-.hero h2{
-    margin-top:20px;
-
-    color:#f5c518;
-
-    font-size:clamp(25px,4vw,45px);
-}
-
-.hero p{
-    margin-top:15px;
-
-    color:#aaa;
-
-    font-size:18px;
-}
-
-.buttons{
-    display:flex;
-
-    gap:15px;
-
-    margin-top:35px;
-}
-
-.btn{
-    padding:15px 25px;
-
-    border-radius:7px;
-
-    font-weight:900;
-
-    transition:.2s;
-}
-
-.buy{
-    background:#f5c518;
-    color:#000;
-}
-
-.buy:hover{
-    transform:translateY(-3px);
-}
-
-.follow{
-    border:1px solid #555;
-}
-
-.follow:hover{
-    border-color:#f5c518;
-}
-
-
-/* HERO LOGO */
-
-.hero-logo img{
-    width:min(420px,35vw);
-
-    border-radius:50%;
-
-    filter:drop-shadow(0 0 50px rgba(245,197,24,.15));
-
-    animation:float 5s ease-in-out infinite;
-}
-
-@keyframes float{
-
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-12px);
-    }
-
-}
-
-
-/* CHAOS VIDEO */
-
-.chaos{
-    padding:100px 9%;
-
-    text-align:center;
-}
-
-.section-title{
-    font-size:clamp(40px,7vw,80px);
-
-    margin-bottom:40px;
-
-    font-weight:1000;
-
-    letter-spacing:-3px;
-}
-
-.chaos video{
-    width:100%;
-
-    max-width:950px;
-
-    max-height:550px;
-
-    object-fit:cover;
-
-    border-radius:12px;
-
-    border:1px solid #222;
-
-    box-shadow:0 20px 80px rgba(0,0,0,.8);
-}
-
-.more{
-    display:inline-block;
-
-    margin-top:25px;
-
-    color:#f5c518;
-
-    font-weight:800;
-}
-
-
-/* TOKEN */
-
-.token-section{
-    padding:100px 9%;
-}
-
-.token-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(4,1fr);
-
-    gap:15px;
-}
-
-.token-card{
-
-    border:1px solid #222;
-
-    padding:35px 25px;
-
-    border-radius:10px;
-
-    transition:.2s;
-}
-
-.token-card:hover{
-
-    transform:translateY(-5px);
-
-    border-color:#f5c518;
-}
-
-.token-card span{
-
-    color:#777;
-
-    font-size:13px;
-
-    text-transform:uppercase;
-
-    letter-spacing:2px;
-}
-
-.token-card h3{
-
-    margin-top:10px;
-
-    font-size:25px;
-
-    color:#f5c518;
-}
-
-
-/* MESSAGE */
-
-.message{
-
-    padding:120px 20px;
-
-    text-align:center;
-
-    border-top:1px solid #151515;
-
-    border-bottom:1px solid #151515;
-}
-
-.message h2{
-
-    font-size:clamp(45px,8vw,100px);
-
-    font-weight:1000;
-
-    letter-spacing:-4px;
-}
-
-.message p{
-
-    margin-top:15px;
-
-    color:#f5c518;
-
-    font-weight:800;
-
-    font-size:20px;
-}
-
-
-/* FOOTER */
-
-footer{
-
-    padding:70px 9% 40px;
-
-    text-align:center;
-}
-
-footer img{
-
-    width:65px;
-
-    border-radius:50%;
-
-    margin-bottom:20px;
-}
-
-footer h2{
-
-    font-size:30px;
-
-    margin-bottom:10px;
-}
-
-footer .tagline{
-
-    color:#f5c518;
-
-    margin-bottom:30px;
-}
-
-footer .email{
-
-    color:#aaa;
-
-    margin-bottom:12px;
-}
-
-footer .contract{
-
-    color:#666;
-
-    margin-bottom:35px;
-}
-
-footer .copyright{
-
-    font-size:12px;
-
-    color:#444;
-}
-
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-    header{
-        padding:0 20px;
-    }
-
-    nav{
-        display:none;
-    }
-
-    .hero{
-
-        min-height:auto;
-
-        flex-direction:column;
-
-        text-align:center;
-
-        padding:70px 25px;
-    }
-
-    .hero h1{
-        letter-spacing:-3px;
-    }
-
-    .buttons{
-        justify-content:center;
-        flex-wrap:wrap;
-    }
-
-    .hero-logo img{
-
-        width:230px;
-
-        margin-top:20px;
-    }
-
-    .chaos{
-
-        padding:70px 20px;
-    }
-
-    .token-section{
-
-        padding:70px 20px;
-    }
-
-    .token-grid{
-
-        grid-template-columns:1fr 1fr;
-    }
-
-}
-
-
-@media(max-width:480px){
-
-    .token-grid{
-
-        grid-template-columns:1fr;
-    }
-
-}
-
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
+<header class="header">
 
-<header>
+<div class="container">
 
-<div class="brand">
+<a href="#" class="logo">
 
-<img src="logo.png">
+<img src="logo.PNG" alt="DangerCat">
 
 <span>DANGERCAT</span>
 
-</div>
-
+</a>
 
 <nav>
 
@@ -475,35 +43,65 @@ footer .copyright{
 
 <a href="#token">TOKEN</a>
 
-<a href="https://x.com/dangercatcoin" target="_blank">X</a>
+<a href="https://x.com/dangercatcoin" target="_blank">
+
+X
+
+</a>
 
 </nav>
 
+</div>
+
 </header>
-
-
 
 <section class="hero" id="home">
 
-<div class="hero-text">
+<div class="container hero-grid">
 
-<h1>DANGERCAT</h1>
+<div class="hero-left">
 
-<h2>BAD CAT. GOOD COIN.</h2>
+<p class="mini">
 
-<p>A meme coin on Solana.</p>
+SOLANA MEME COIN
 
+</p>
+
+<h1>
+
+BAD CAT.<br>
+
+<span>GOOD COIN.</span>
+
+</h1>
+
+<p class="hero-text">
+
+No promises.
+
+<br>
+
+Just chaos.
+
+</p>
 
 <div class="buttons">
 
-<a class="btn buy" href="#">
+<a href="#" class="buy">
+
 BUY $DCAT
+
 </a>
 
+<a
 
-<a class="btn follow"
 href="https://x.com/dangercatcoin"
-target="_blank">
+
+target="_blank"
+
+class="follow"
+
+>
 
 FOLLOW ON X
 
@@ -511,98 +109,113 @@ FOLLOW ON X
 
 </div>
 
+<p class="coming">
+
+CONTRACT
+
+COMING SOON
+
+</p>
+
 </div>
 
+<div class="hero-right">
 
+<img src="logo.PNG" alt="DangerCat">
 
-<div class="hero-logo">
-
-<img src="logo.png">
+</div>
 
 </div>
 
 </section>
-
-
-
+    
 <section class="chaos" id="chaos">
 
-<h2 class="section-title">
-CHAOS
-</h2>
+<div class="container">
 
+<div class="section-title">
 
-<video autoplay muted loop playsinline controls>
+<p>01</p>
+
+<h2>CHAOS</h2>
+
+</div>
+
+<div class="video-box">
+
+<video autoplay muted loop playsinline controls poster="logo.PNG">
 
 <source src="chaos.mp4" type="video/mp4">
 
+Your browser doesn't support HTML5 video.
+
 </video>
 
+</div>
 
-<br>
+<div class="x-button">
 
+<a href="https://x.com/dangercatcoin" target="_blank">
 
-<a
-class="more"
-href="https://x.com/dangercatcoin"
-target="_blank">
-
-MORE CHAOS → X
+MORE CHAOS ON X →
 
 </a>
 
+</div>
+
+</div>
+
 </section>
 
 
 
-<section class="token-section" id="token">
+<section class="token" id="token">
 
-<h2 class="section-title">
-TOKEN
-</h2>
+<div class="container">
 
+<div class="section-title">
 
-<div class="token-grid">
+<p>02</p>
 
+<h2>TOKEN</h2>
 
-<div class="token-card">
+</div>
 
-<span>Ticker</span>
+<div class="cards">
+
+<div class="card">
 
 <h3>$DCAT</h3>
 
+<span>Ticker</span>
+
 </div>
 
-
-
-<div class="token-card">
-
-<span>Network</span>
+<div class="card">
 
 <h3>Solana</h3>
 
+<span>Network</span>
+
 </div>
 
-
-
-<div class="token-card">
-
-<span>Supply</span>
+<div class="card">
 
 <h3>1B</h3>
 
+<span>Supply</span>
+
 </div>
 
-
-
-<div class="token-card">
-
-<span>Tax</span>
+<div class="card">
 
 <h3>0%</h3>
 
+<span>Tax</span>
+
 </div>
 
+</div>
 
 </div>
 
@@ -610,15 +223,21 @@ TOKEN
 
 
 
-<section class="message">
+<section class="banner">
 
-<h2>
-CONTAINMENT FAILED.
-</h2>
+<div class="container banner-box">
 
-<p>
-COMING SOON.
-</p>
+<img src="logo.PNG" alt="DangerCat">
+
+<div>
+
+<p>CONTAINMENT FAILED.</p>
+
+<h2>COMING SOON.</h2>
+
+</div>
+
+</div>
 
 </section>
 
@@ -626,33 +245,60 @@ COMING SOON.
 
 <footer>
 
-<img src="logo.png">
+<div class="container footer-grid">
 
-<h2>
-DANGERCAT
-</h2>
+<div>
 
-<p class="tagline">
-Bad Cat. Good Coin.
-</p>
+<img src="logo.PNG" class="footer-logo">
 
+<h3>DANGERCAT</h3>
 
-<p class="email">
+<p>Bad Cat. Good Coin.</p>
+
+</div>
+
+<div>
+
+<h4>Community</h4>
+
+<a href="https://x.com/dangercatcoin" target="_blank">
+
+Follow on X
+
+</a>
+
+</div>
+
+<div>
+
+<h4>Contact</h4>
+
+<p>
+
 dangercatcoin@outlook.com
+
 </p>
 
+<p>
 
-<p class="contract">
 Contract: Coming Soon
+
 </p>
 
+</div>
 
-<p class="copyright">
-© 2026 DangerCat
-</p>
+</div>
+
+<div class="copyright">
+
+© 2026 DangerCat. All Rights Reserved.
+
+</div>
 
 </footer>
 
+<script src="script.js"></script>
 
 </body>
+
 </html>
